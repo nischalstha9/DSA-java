@@ -1,4 +1,3 @@
-
 public class StackOperation {
 	
 	int size, top, stack[];
@@ -37,7 +36,7 @@ public class StackOperation {
 		}
 	}
 	
-	 void displayStackItems(){
+	void displayStackItems(){
 	        for(int i=0;i<=top;i++){
 	            System.out.println(stack[i]);
 	        }
@@ -47,43 +46,23 @@ public class StackOperation {
 	public static void main(String[] args) {
 		StackOperation ST = new StackOperation();
 		ST.createStack(10);
-		ST.pushToStack(1);
-		ST.pushToStack(2);
-		ST.pushToStack(3);
-		ST.pushToStack(1);
-		ST.pushToStack(2);
-		ST.pushToStack(3);
-		ST.pushToStack(1);
-		ST.pushToStack(2);
-		ST.pushToStack(3);
-		ST.pushToStack(1);
-		ST.pushToStack(1);
-		ST.displayStackItems();
-		if(ST.isEmpty())
-			System.out.println("stack Empty");
-		else
-			System.out.println("Stack not empty");
-		if(ST.isFull())
-			System.out.println("stack Full");
-		else
-			System.out.println("Stack not full");
 		int i;
+		for(i=0; i<11; i++) {
+			ST.pushToStack(i);
+		}
+		ST.displayStackItems();
+		String msg = ST.isEmpty()?"stack Empty":"Stack Not Empty";
+		System.out.println(msg);
+		msg = ST.isEmpty()?"stack Full":"Stack Not Full";
+		System.out.println(msg);
 		for(i=0; i<11; i++) {
 			ST.popFromStack();
 		}
 		ST.displayStackItems();
-		if(ST.isEmpty())
-			System.out.println("stack Empty");
-		else
-			System.out.println("Stack not empty");
-		if(ST.isFull())
-			System.out.println("stack Full");
-		else
-			System.out.println("Stack not full");
-		
-		
-		
-		
+		msg = ST.isEmpty()?"stack Empty":"Stack Not Empty";
+		System.out.println(msg);
+		msg = ST.isEmpty()?"stack Full":"Stack Not Full";
+		System.out.println(msg);		
 	}
 
 }
